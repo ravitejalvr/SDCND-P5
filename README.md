@@ -21,7 +21,8 @@ The inputs which were fed are orientations per cell, pixels per cell and cells p
 These hog features were extracted for all vehicles and non-vehicle images for training SVC classifier.
 
 The sample hog features image is given below:
-<a href="url"><img src="http://imgur.com/a/HVgVJ" align="center" height="200" width="250" ></a>
+
+<a href="url"><img src="http://i.imgur.com/rTeRO8q.jpg" align="center" height="200" width="250" ></a>
 
 The parameters for hog inputs were tuned for getting best accuracy in SVC classification. Finally, 11 orientations, 8 pixels per cell and 2 cells per block were selected. Color space of YCrCb is selected.
 
@@ -37,11 +38,13 @@ To avoid over-fitting, shuffling and random splitting of test data is done.
 The Method `find_cars()` from the lesson materials is used for detection of cars in entire image. This method extracts HOG features of all aimage and later splits according to the cell and block size. Then, also hog features and color space features were found out of each window and are resized to (64,64) for each window for classifier to predict. 
 
 The output is given below:
+
 <a href="url"><img src="http://i.imgur.com/skAZa0Q.jpg" align="center" height="200" width="250" ></a>
 
 Then, the detected car blocks were added heat based on number of times it was overlapped. add_heat function is used for this purpose and it increases pixel value by 1 for every detection.
 
 The output is given below:
+
 <a href="url"><img src="http://i.imgur.com/8lQH3Kt.jpg" align="center" height="200" width="250" ></a>
 
 Then, threshold is applied to the heatmap such that all images less than that value will be set to zero.
@@ -49,6 +52,7 @@ Then, threshold is applied to the heatmap such that all images less than that va
 Based on the heatmap and threshold, final car detection boundary is set. 
 
 The final detection boundary is given below:
+
 <a href="url"><img src="http://i.imgur.com/FJ7A2wr.jpg" align="center" height="200" width="250" ></a>
 
 The final detection boundary performs reasonably well with no false positives in the test images.
